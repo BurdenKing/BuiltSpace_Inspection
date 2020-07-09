@@ -1,0 +1,81 @@
+Some Common and Time consuming Errors we founded and Resolved during development:-
+
+Import errors:-
+
+- RCTScrollContentView (at ScrollView.js:1038)
+- RCTScrollView (at ScrollView.js:1178)
+- ScrollView (at App.js:25)
+- RCTSafeAreaView (at SafeAreaView.js:55)
+- SafeAreaView (at App.js:24)
+- App (at renderApplication.js:40)
+- RCTView (at AppContainer.js:101)
+- RCTView (at AppContainer.js:119)
+- AppContainer (at renderApplication.js:39)
+
+Animated.View error:-
+
+- RCTView (at file.js:27)
+- FadeInView (at file.js:42)
+- RCTView (at file.js:41)
+- _default (at App.js:29)
+- RCTScrollContentView (at ScrollView.js:1038)
+- RCTScrollView (at ScrollView.js:1178)
+- SafeAreaView (at App.js:24)
+- App (at renderApplication.js:40)
+- RCTView (at AppContainer.js:101)
+- RCTView (at AppContainer.js:119)
+- AppContainer (at renderApplication.js:39)
+
+
+Dependencies error Error:- 
+- undefined Unable to resolve module
+- /node_modules/react-native-root-siblings/lib/AppRegistryInjection.js: Module does not   exist in the module map
+- error: method does not override or implement a method from a supertype
+
+
+Unexpected App crash on launch problem:-
+- missing android SDK problems everytie we merge and pull from Github.
+
+
+Returning Invalid React Component Error:-
+- warning.js:36 Warning: React.createElement: type should not be null, undefined, boolean, or number. It should be a string (for DOM elements) or a ReactClass (for composite components). Check the render method of `App`.
+
+
+Can’t Render Object Error:-
+- Objects are not valid as a React child
+
+--------------------------------------------------------------------------
+Resolved above Errors by following commands and good coding practises:-
+
+- cd android and gradlew clean for Troubleshooting Android.
+
+- Uninstall the App from emulator or Device and start again.
+
+- npm install in main folder and npm install in android folder.
+
+- To avoid some import errors:- when creating and exporting components, we learned not to   mix default and named imports (Saves lot of time)
+
+- Install latest Android SDK packages
+
+- Sometimes we need to run the server seperatly using: react-native start
+
+- Avoided Animated.View error by creating an element like this: <Animated.View>
+
+- Clear watchman watches by: watchman watch-del-all
+
+- Delete node_modules: rm -rf node_modules 
+
+- Remove the cache: rm -rf /tmp/metro-*
+
+- Use Property destructuring
+
+- Split render elements into readable helper function()
+
+- Use the meaningful name for variables
+
+- Define proptypes
+
+- Separate lifecycle, methods and render Elements in the component
+
+
+
